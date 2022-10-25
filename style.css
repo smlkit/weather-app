@@ -31,6 +31,8 @@ body {
   color: var(--dark-grey);
   box-sizing: border-box;
   background-color: var(--white);
+  max-height: 100vh;
+  overflow: hidden;
 }
 
 /* Utilities */
@@ -58,6 +60,7 @@ h1.city {
 .search {
   margin-top: 3em;
 }
+
 .wrapper {
   width: 22em;
   margin: auto;
@@ -69,6 +72,7 @@ h1.city {
   border-radius: 5px;
   border: 2px solid var(--blue);
   margin-right: .5em;
+  color: var(--blue);
 }
 
 .search-bar:focus {
@@ -83,6 +87,11 @@ h1.city {
   color: var(--white);
   background: var(--blue);
   font-weight: 600;
+  transition: .5s;
+}
+
+.search-btn:hover {
+  opacity: .8;
 }
 
 .card {
@@ -105,7 +114,7 @@ h1.city {
 }
 
 .blue {
-  height: 18em;
+  height: 18.5em;
   color: var(--white);
   background: var(--blue);
   margin-bottom: 0;

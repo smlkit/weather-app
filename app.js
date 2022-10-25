@@ -3,6 +3,8 @@ const searchBar = document.querySelector('.search-bar');
 const searchBtn = document.querySelector('.search-btn');
 const dataDisplay = document.querySelector('.display');
 
+getWeather('moscow');
+
 function getWeather(city) {
   const request = new XMLHttpRequest();
   request.open('GET', `https://api.weatherapi.com/v1/current.json?key=c2e7f6f6dfd642fea0b113356222510&q=${city}`);
@@ -60,7 +62,6 @@ function getWeather(city) {
   });
 }
 
-getWeather('moscow');
 searchBtn.addEventListener('click', () => {
   if (searchBar.value) {
     dataDisplay.innerHTML = '';
@@ -68,3 +69,10 @@ searchBtn.addEventListener('click', () => {
     getWeather(searchBar.value);
   }
 });
+
+searchBar.addEventListener('keypress', function(e) {
+  if (e.key === 'Enter') {
+    e.preventDefault();
+    searchBtn.click();
+  }
+})
