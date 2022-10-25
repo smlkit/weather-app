@@ -5,7 +5,7 @@ const dataDisplay = document.querySelector('.display');
 
 function getWeather(city) {
   const request = new XMLHttpRequest();
-  request.open('GET', `http://api.weatherapi.com/v1/current.json?key=c2e7f6f6dfd642fea0b113356222510&q=${city}`);
+  request.open('GET', `https://api.weatherapi.com/v1/current.json?key=c2e7f6f6dfd642fea0b113356222510&q=${city}`);
   // request.open('GET', `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=5471074f967ab6fc012ddf9d6af6f7d1`);
   request.send();
 
