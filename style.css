@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@300;400;600&display=swap");
+
+:root {
+  --dark-grey: #4b4b4b;
+  --light-grey: #7b7f8c;
+  --white-grey: #cbceda;
+  --white: #f1f5ff;
+
+  --blue: #6084ef;
+  --yellow: #ffd761;
+
+  --font-main: "Roboto Condense", sans-serif;
+  --font-accent: "Bebas Neue", sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: var(--font-main);
+  color: var(--dark-grey);
+  box-sizing: border-box;
+  background-color: var(--white);
+}
+
+/* Utilities */
+.container {
+  width: 70%;
+  margin: 2rem auto;
+}
+
+
+.spacing > * + * {
+  margin-top: 1em;
+}
+
+.logo {
+  width: 7em;
+  margin-bottom: 1.5em;
+}
+
+h1.city {
+  font-family: var(--font-accent);
+  font-size: 1.5em;
+}
+
+/* Common */
+.search {
+  margin-top: 3em;
+}
+.wrapper {
+  width: 22em;
+  margin: auto;
+}
+
+.search-bar {
+  width: 18.5em;
+  padding: .7em 1.6em;
+  border-radius: 5px;
+  border: 2px solid var(--blue);
+  margin-right: .5em;
+}
+
+.search-bar:focus {
+  outline: none;
+}
+
+.search-btn {
+  padding: .8em 1.7em;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  color: var(--white);
+  background: var(--blue);
+  font-weight: 600;
+}
+
+.card {
+  border-radius: 15px;
+  padding: 2.5em;
+  box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.2);
+  text-align: center;
+  margin: auto;
+}
+
+.display {
+  opacity: 0;
+  transition: opacity .7s;
+}
+
+/* Main weather card */
+.main-card {
+  max-width: 22em;
+  margin-bottom: 1.5em;
+}
+
+.blue {
+  height: 18em;
+  color: var(--white);
+  background: var(--blue);
+  margin-bottom: 0;
+  border-radius: 15px 15px 0 0;
+}
+
+.main-img {
+  margin-top: .7em;
+  width: 7em;
+}
+
+.white {
+  border-radius: 0 0 15px 15px;
+  background: #fff;
+  text-align: left;
+  color: var(--dark-grey);
+}
+
+.main-card .city {
+  padding-bottom: 1em;
+}
+
+.weather {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.weather .description {
+  text-align: left;
+}
+
+.weather-description {
+  font-weight: 700;
+  font-size: 1.2em;
+  letter-spacing: 0.06em;
+}
+
+.main-degrees {
+  font-family: var(--font-accent);
+  font-size: 3.5em;
+}
+
+.details {
+  font-weight: 700;
+  font-size: 1.3em;
+}
+
+.flex {
+  display: flex;
+  gap: 0.8em;
+}
+
+.param {
+  color: var(--light-grey);
+  font-size: 0.8em;
+}
+
+/* Carousel */
+.secondary-card {
+  width: 55%;
+  height: 15em;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  gap: 0.5em;
+  background: #fff;
+}
+
+.secondary-card {
+  padding: 1em;
+}
+
+.secondary-degrees {
+  font-family: var(--font-accent);
+  font-size: 1.7em;
+}
+
+.owl-carousel .owl-item .secondary-img {
+  width: 5em;
+  margin: 2.5em auto 0 auto;
+}
+
+/* Footer */
+footer {
+  width: 70%;
+  max-width: 16em;
+  margin: 1em auto;
+}
+
+footer a {
+  text-decoration: none;
+  color: var(--blue);
+  position: relative;
+  top: 0;
+  transition: all 250ms ease;
+}
+
+footer a:hover,
+footer a:focus {
+  top: -2px;
+  opacity: 0.8;
+}
+
+@media (min-width: 900px) {
+  .weather-cards {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 0em;
+  }
+}
