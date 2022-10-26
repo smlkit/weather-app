@@ -229,3 +229,12 @@ footer a:focus {
     gap: 0em;
   }
 }
+
+.error {
+  max-width: 22em;
+  margin: auto;
+  background-color: #ff8f9a;
+  padding: 1em 1.5em;
+  border-radius: 5px;
+  color: #fff;
+}

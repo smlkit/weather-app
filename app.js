@@ -7,7 +7,10 @@ getWeather('moscow');
 
 function getWeather(city) {
   const request = fetch(`https://api.weatherapi.com/v1/current.json?key=c2e7f6f6dfd642fea0b113356222510&q=${city}`)
-    .then(response => response.json())
+    .then(response => {
+      if (!response.ok) throw new Error(`Invalid city name!`);
+      return response.json();
+    })
     .then(data => {
       const mainCard = `
         <div class="card main-card blue">
@@ -53,7 +56,7 @@ function getWeather(city) {
           dataDisplay.insertAdjacentHTML('beforeend', mainCard);
           dataDisplay.style.opacity = "1";
           searchBar.value = '';
-    });
+    }).catch(err => renderError(`${err}`)).finally(() => dataDisplay.style.opacity = "1");
 }
 
 searchBtn.addEventListener('click', () => {
@@ -70,3 +73,12 @@ searchBar.addEventListener('keypress', function(e) {
     searchBtn.click();
   }
 })
+
+function renderError(msg) {
+  const errorMsg = `
+    <div class="container error">
+      <p>❌ ${msg}</p>
+    </div>
+  `;
+  dataDisplay.insertAdjacentHTML('beforeend', errorMsg);
+}
